@@ -229,6 +229,49 @@ class CalculatorTest extends TestCase {
         $this->calculator->media($a);
     }
 
+    // TESTES DE NÚMERO PAR
+    // Define valor de entrada, calcula o resultado com a função de número par e compara com o resultado esperado
+        public function testParPositivo() {
+        $a = 20; // valor 1
+        $esperado = true; // resultado esperado
+
+        $resultado = $this->calculator->ehPar($a); // chama a função ehPar da classe Calculator
+        $this->assertEquals($esperado, $resultado); //  compara o resultado obtido com o esperado
+    }
+
+    public function testImparPositivo() {
+        $a = 3;
+        $esperado = false;
+
+        $resultado = $this->calculator->ehPar($a);
+        $this->assertEquals($esperado, $resultado);
+    }
+
+    public function testParZero() {
+        $a = 0;
+        $esperado = true;
+
+        $resultado = $this->calculator->ehPar($a);
+        $this->assertEquals($esperado, $resultado);
+    }
+
+    public function testParNegativo() {
+        $a= -20;
+        $esperado = true;
+
+        $resultado = $this->calculator->ehPar($a);
+        $this->assertEquals($esperado, $resultado);
+    }
+
+    public function testImparNegativo() {
+        $a = -3;
+        $esperado = false;
+
+        $resultado = $this->calculator->ehPar($a);
+        $this->assertEquals($esperado, $resultado);
+    }
+
+
     // TESTES DE MAIOR NÚMERO
     // Define valor de entrada, calcula o resultado com a função de maior número e compara com o resultado esperado
         public function testMaiorPositivos() {
